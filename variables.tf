@@ -14,3 +14,7 @@ variable "azs" {}
 ## Subnets
 variable "public_subnet_cidr" {}
 variable "private_subnet_cidr" {}
+
+variable "amis" {}
+variable "instance_type" {}
+variable "key_name" {}

@@ -1,4 +1,5 @@
 resource "aws_subnet" "public" {
+  # count                   = length(var.public_subnet_cidr)
   count                   = 2
   vpc_id                  = aws_vpc.clsp.id
   cidr_block              = element(var.public_subnet_cidr, count.index)
@@ -11,6 +12,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
+  # count           = length(var.private_subnet_cidr)
   count             = 1
   vpc_id            = aws_vpc.clsp.id
   cidr_block        = element(var.private_subnet_cidr, count.index)
